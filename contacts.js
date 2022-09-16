@@ -33,13 +33,13 @@ const getContactsById = async contactId => {
 const removeContact = async contactId => {
 	try {
 		const contacts = await getAllContacts();
-		const removedItemList = contacts.filter(({ id }) => id !== contactId.toString());
+		const filteredContacts = contacts.filter(({ id }) => id !== contactId.toString());
 
-		if (removedItemList.length === contacts.length) {
+		if (filteredContacts.length === contacts.length) {
 			throw new Error('There is no contact with such id, so it can be removed. Please insert correct id!');
 		}
 
-		fs.writeFile(contactsPath, JSON.stringify(removedItemList));
+		fs.writeFile(contactsPath, JSON.stringify(filteredContacts));
 
 		return console.log('Contact successfully removed');
 	} catch (error) {

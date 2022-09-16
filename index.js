@@ -25,8 +25,3 @@ const invokeAction = ({ action, id, name, email, phone }) => {
 };
 
 invokeAction(argv);
-
-// contacts.listContacts();
-// contacts.getContactsById('IrIrHbI-DalhPzjLNYNvu');
-// contacts.removeContact('IrIrHbI-DalhPzjLNYNvu');
-// contacts.addContact('Nikita', 'dfsdkfsh@fsf.ua', '+3123123132');
